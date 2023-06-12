@@ -34,10 +34,37 @@ class _HomeViewState extends State<HomeView> {
                 fontSize: 16,
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 20),
+            Table(
+              children: [
+                buildRow(["Classification", "BMI range - kg/m2"],
+                    isHeader: true),
+                buildRow(["Severe Thinness", "< 16"]),
+                buildRow(["Moderate Thinness", "16 - 17"]),
+                buildRow(["Mild Thinness", "17 - 18.5"]),
+                buildRow(["Normal", "18.5 - 25"]),
+                buildRow(["Overweight", "25 - 30"]),
+                buildRow(["Obese Class I", "30 - 35"]),
+                buildRow(["Obese Class II", "35 - 40"]),
+                buildRow(["Obese Class III", "> 40"])
+              ],
+            )
           ],
         ),
       ),
     );
   }
+
+  TableRow buildRow(List cells, {bool isHeader = false}) => TableRow(
+          children: cells.map((cell) {
+        final style = TextStyle(
+          fontWeight: isHeader ? FontWeight.bold : FontWeight.normal,
+          fontSize: isHeader ? 18 : 16,
+        );
+
+        return Padding(
+          padding: const EdgeInsets.all(12),
+          child: Center(child: Text(cell, style: style)),
+        );
+      }).toList());
 }

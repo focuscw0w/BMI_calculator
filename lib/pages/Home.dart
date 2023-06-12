@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_register/TabViews/HomeView.dart';
+import 'package:login_register/TabViews/ProfileView.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -30,7 +31,7 @@ class _HomeState extends State<Home> {
           children: [
             HomeView(),
             Icon(Icons.directions_transit),
-            Icon(Icons.directions_bike),
+            ProfileView()
           ],
         ),
       ),
