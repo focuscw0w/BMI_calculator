@@ -37,7 +37,7 @@ class _HomeViewState extends State<HomeView> {
             SizedBox(height: 20),
             Table(
               children: [
-                buildRow(["Classification", "BMI range - kg/m2"],
+                buildRow(["Classification", "BMI range - kg/h2"],
                     isHeader: true),
                 buildRow(["Severe Thinness", "< 16"]),
                 buildRow(["Moderate Thinness", "16 - 17"]),
